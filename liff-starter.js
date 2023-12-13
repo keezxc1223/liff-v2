@@ -8,16 +8,16 @@ Thanks to :
 - https://github.com/ari-yk
 */
 
-window.onload = function () {
+window.onload = function() {
     initVConsole();
     initContent();
     initLiff();
 }
 
-var HttpClient = function () {
-    this.get = function (aUrl, aCallback) {
+var HttpClient = function() {
+    this.get = function(aUrl, aCallback) {
         var anHttpRequest = new XMLHttpRequest();
-        anHttpRequest.onreadystatechange = function () {
+        anHttpRequest.onreadystatechange = function() {
             if (anHttpRequest.readyState == 4 && anHttpRequest.status == 200)
                 aCallback(anHttpRequest.responseText);
         }
@@ -31,10 +31,10 @@ function initVConsole() {
     window.vConsole = new window.VConsole({
         defaultPlugins: ["system", "network", "element", "storage"],
         maxLogNumber: 1000,
-        onReady: function () {
+        onReady: function() {
             console.log("vConsole is ready.");
         },
-        onClearLog: function () {
+        onClearLog: function() {
             console.log("on clearLog");
         }
     });
@@ -265,33 +265,33 @@ function sendLiffMessage() {
                         aspectMode: "cover",
                         action: {
                             type: "uri",
-                            uri: "line://app/2002196001-KldwxBwk?auto=yes&type=image&downloadUrl=" + profile.pictureUrl + "&previewUrl=" + profile.pictureUrl
+                            uri: "line://app/1657024923-2r46WKKN?auto=yes&type=image&downloadUrl=" + profile.pictureUrl + "&previewUrl=" + profile.pictureUrl
                         }
                     },
                     body: {
                         type: "box",
                         layout: "vertical",
                         contents: [{
-                            type: "text",
-                            text: userDisplayName,
-                            align: "center",
-                            weight: "bold",
-                            size: "xl"
-                        },
-                        {
-                            type: "box",
-                            layout: "vertical",
-                            margin: "lg",
-                            spacing: "sm",
-                            contents: [{
                                 type: "text",
-                                text: profile.statusMessage,
-                                wrap: true,
-                                color: "#666666",
-                                size: "sm",
-                                flex: 5
-                            }]
-                        }
+                                text: userDisplayName,
+                                align: "center",
+                                weight: "bold",
+                                size: "xl"
+                            },
+                            {
+                                type: "box",
+                                layout: "vertical",
+                                margin: "lg",
+                                spacing: "sm",
+                                contents: [{
+                                    type: "text",
+                                    text: profile.statusMessage,
+                                    wrap: true,
+                                    color: "#666666",
+                                    size: "sm",
+                                    flex: 5
+                                }]
+                            }
                         ]
                     },
                     footer: {
@@ -299,32 +299,32 @@ function sendLiffMessage() {
                         layout: "horizontal",
                         spacing: "sm",
                         contents: [{
-                            type: "button",
-                            style: "primary",
-                            height: "sm",
-                            color: "#02afff",
-                            action: {
-                                type: "uri",
-                                label: "Square",
-                                uri: "https://lin.ee/3fKeC6h"
+                                type: "button",
+                                style: "primary",
+                                height: "sm",
+                                color: "#02afff",
+                                action: {
+                                    type: "uri",
+                                    label: "Square",
+                                    uri: "https://lin.ee/3fKeC6h"
+                                },
+                                flex: 1
                             },
-                            flex: 1
-                        },
-                        {
-                            type: "button",
-                            style: "primary",
-                            height: "sm",
-                            action: {
-                                type: "uri",
-                                label: "Profile",
-                                uri: "line://app/2002196001-KldwxBwk?type=profile"
+                            {
+                                type: "button",
+                                style: "primary",
+                                height: "sm",
+                                action: {
+                                    type: "uri",
+                                    label: "Profile",
+                                    uri: "line://app/1657024923-2r46WKKN?type=profile"
+                                },
+                                flex: 2
                             },
-                            flex: 2
-                        },
-                        {
-                            type: "spacer",
-                            size: "sm"
-                        }
+                            {
+                                type: "spacer",
+                                size: "sm"
+                            }
                         ],
                         flex: 0
                     }
@@ -435,7 +435,7 @@ function sendLiffMessage() {
         } else if (type == "messagesUrl") {
             console.log("Start sending message");
             var messagesUrl = document.getElementById("messagesUrl").value;
-            client.get(messagesUrl, function (response) {
+            client.get(messagesUrl, function(response) {
                 var messages = JSON.parse(response);
                 liff.sendMessages(messages).then(() => {
                     console.log("Success sending message");
