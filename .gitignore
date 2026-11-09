@@ -1,0 +1,4 @@
+# local/runtime artifacts
+*.log
+*.lock
+.DS_Store
