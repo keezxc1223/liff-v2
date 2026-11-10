@@ -1,0 +1,470 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>HAO LINE LIFF - LINE 禮物</title>
+<meta name="theme-color" content="#f7f2ea">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20rx='8'%20fill='%23cf6b43'/%3E%3Cpath%20d='M7%2011.5h18v10H7z'%20fill='none'%20stroke='%23fff'%20stroke-width='2.2'%20stroke-linejoin='round'/%3E%3Cpath%20d='M7%2012l9%206%209-6'%20fill='none'%20stroke='%23fff'%20stroke-width='2.2'%20stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20rx='8'%20fill='%23cf6b43'/%3E%3Cpath%20d='M7%2011.5h18v10H7z'%20fill='none'%20stroke='%23fff'%20stroke-width='2.2'%20stroke-linejoin='round'/%3E%3Cpath%20d='M7%2012l9%206%209-6'%20fill='none'%20stroke='%23fff'%20stroke-width='2.2'%20stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../css/haoliff.css?v=1794333603">
+</head>
+<body class="gift">
+<div class="bg"></div><div class="grain"></div>
+<main class="wrap">
+  <header class="masthead">
+    <div class="mark">HAO LINE LIFF</div>
+    <h1 class="kicker">LINE <em>禮物</em></h1>
+  </header>
+  <section class="panel announcement">
+    <div class="notice"><div><b>2025.03.12 更新</b><br>新增禮券種類禮物，提供更多選擇！</div></div>
+  </section>
+  <section class="panel">
+    <h2 class="panel-h">禮物設定</h2>
+    <div class="field"><label>自訂訊息</label><input type="text" id="customMessage" placeholder="按下去發送的內容，未設定會送預設"></div>
+    <div class="field"><label>選擇禮物</label>
+    <select id="giftSelect" class="input-field select-field">
+                    <option value="gift1">[歡慶26週年!]【星巴克】特大杯巧克力可可碎片星冰樂雙杯組</option>
+                    <option value="gift2">【Disney迪士尼系列金飾】 立體黃金項鍊-星際史迪奇款</option>
+                    <option value="gift3">【麥當勞·麥心意】原味麥脆鷄腿六塊+中杯可樂兩杯好禮即享券</option>
+                    <option value="gift4">牡羊座生日禮物【蘭蔻】小黑瓶30ml+4件禮_Lancome</option>
+                    <option value="gift5">【Uber / Uber Eats 通用券】200元好禮即享券(一次抵用型)</option>
+                    <option value="gift6">【foodpanda】200元優惠碼即享券(輸入序號後即可取得foodpanda優惠碼) (一次抵用券)</option>
+                    <option value="gift7">【戴森Dyson】Dyson Supersonic 吹風機 HD08 全新版吹風機 配抗毛躁吹嘴 (全桃紅色)</option>
+                    <option value="gift8">【Apple】 AirPods Pro 第2代 搭配 MagSafe 充電盒 (USB-C)(輸入序號即可官方宅配到府)</option>
+                    <option value="gift9">(旗艦新機上市)【戴森Dyson】 Dyson BP03 強效極靜甲醛偵測空氣清淨機 (亮銀色及普魯士藍) 贈專用HEPA濾網+可攜式真空保鮮機</option>
+                    <option value="gift10">【YSL】生日香氛禮盒組｜NEW自由不羈淡香水30ML+自由不羈淡香精7.5ML</option>
+                    <option value="gift11">【Estee Lauder 雅詩蘭黛】我的女神 祝你永遠美麗👰｜小棕瓶50ml+原生露30ml+無敵霜5ml+小棕眼3ml+SOS安瓶5ml+化妝包</option>
+                    <option value="gift12">【DIOR】迪奧Miss Dior 香氛隨身香水禮盒-高訂繁花限量版</option>
+                    <option value="gift13">【神腦生活】Apple MacBook Air M2 8G 512G 15吋</option>
+                    <option value="gift14">【Nintendo Switch】OLED款式 黑白主機(台灣公司貨)(電力加強版)</option>
+                    <option value="gift15">【Nespresso】創新美式 Vertuo 系列 POP 膠囊咖啡機 共5色 (贈咖啡組+膠囊折扣金)</option>
+                    <option value="gift16">龍禮臻選【TAKASHIMA 高島】敲手感冰熱按摩槍/筋膜槍</option>
+                    <option value="gift17">龍耀不凡【TAKASHIMA 高島】六星級時尚護足樂/腳底按摩</option>
+                    <option value="gift18">【神腦生活】Apple Watch S9 GPS 45mm 【現貨】</option>
+                    <option value="gift19">龍禮臻選【TAKASHIMA 高島】韻律時光機/垂直律動機</option>
+                    <option value="gift20">【戴森Dyson】Dyson V12 Detect Slim™ Fluffy SV34 輕量智慧無線吸塵器 (送專用收納架)</option>
+                    <option value="gift21">【戴森 Dyson】HS05 Airwrap 多功能造型器 吹整器 長髮捲 星空藍粉霧色 禮盒版</option>
+                    <option value="gift22">【TAKASHIMA 高島】Sandwich三明治跑步機 T-100(2色任選)-贈啞鈴+專用地墊</option>
+                    <option value="gift23">【APPLE】iPhone 15 (6.1吋/256G) DEVILCASE+HODA 超值組</option>
+                    <option value="gift24">【神腦生活】Apple iPhone 15 Pro 128GB【現貨】</option>
+                    <option value="gift25">[平輸版]GUCCI GG Marmont系列蘋果印花縫線牛皮肩背/斜背包(白色) 真品平輸</option>
+                    <option value="gift26">[平輸版]BURBERRY Lola TB金字LOGO格紋絎縫帆布鏈帶小號肩背/斜背包(米色)真品平輸</option>
+                    <option value="gift27">[平輸版]BURBERRY Frances經典標誌TB系列小牛皮迷你兩用包(自然色／麥芽棕色)真品平輸</option>
+                    <option value="gift28">[平輸版]GUCCI Dionysus GG 織紋飾面虎頭扣帆布手提單層肩背包(小/米黑)真品平輸</option>
+                    <option value="gift29">[平輸版]GUCCI GG Marmont 銀色雙G LOGO牛皮愛心縫線手提肩背包(粉綠)真品平輸</option>
+                    <option value="gift30">[平輸版]Hermes 愛馬仕 Bearn 邁索爾山羊皮卡夾(09淡紫)真品平輸</option>
+                    <option value="gift31">[平輸版]GOYARD SAIGON 木質手把軟箱包-迷你/黑 真品平輸</option>
+                    <option value="gift32">[PlayStation 5 遊戲] 七龍珠 電光炸裂！ZERO 數位終極版</option>
+                    <option value="gift33">【PS5】PlayStation®5 Slim光碟版主機 新款</option>
+                    <option value="gift34">【神腦生活】Apple iPhone 16 256GB【現貨】</option>
+                    <option value="gift35">【DIOR】【禮物獨家】迪奧藍星唇膏禮盒 巴黎地圖</option>
+                    <option value="gift36">代印祝福卡片〔平輸版〕【CHANEL 香奈兒】Noir 黑色COCO香水50ml 生日禮物 閨蜜禮物 代印卡片</option>
+                    <option value="gift36">【神腦生活】APPLE MacBook Air M3晶片 8G 256G 15吋</option>
+                    <option value="gifta">--- 2025.03.12 更新 ---</option>
+                    <option value="gift37">【饗賓餐旅】 饗食天堂-平日晚餐券/假日午餐券(2張/組)(2025年版)</option>
+                    <option value="gift38">[寵愛禮]【瓦城集團】5000元好禮即享券(分次使用．無效期)</option>
+                    <option value="gift39">[寵愛禮]【統一集團通用】 2000元 7-ELEVEN數位商品禮券 好禮即享券</option>
+                    <option value="gift40">【新光三越】電子商品禮券10000元 享樂券</option>
+                    <option value="gift41">【王品集團】5000元好禮即享券-限定品牌使用(分次使用．無效期)</option>
+                </select>
+    </div>
+    <section class="preview">
+      <div class="envelope">
+        <div class="env-top"><div class="env-badge"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13"/><path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"/><path d="M7.5 8a2.5 2.5 0 0 1 0-5C11 3 12 8 12 8"/><path d="M16.5 8a2.5 2.5 0 0 0 0-5C13 3 12 8 12 8"/></svg></div><div><div class="env-label">LINE 禮物</div><div class="env-from">由你發送 · 收禮人會看到</div></div></div>
+        <div class="env-msg" id="pvGift" style="font-size:16px;line-height:1.5">（選擇一個禮物）</div>
+        <div class="env-msg" id="pvMsg" data-default="（可自訂附加訊息）" style="font-size:14px;margin-top:8px;opacity:.6">（可自訂附加訊息）</div>
+        <div class="env-foot">LINE · 禮物<span class="chip">Preview</span></div>
+      </div>
+    </section>
+    <button id="btnSendGift">發送禮物</button>
+    <button id="btnShare" aria-hidden="true" style="display:none;position:absolute;width:0;height:0;min-height:0;padding:0;margin:0;border:0;overflow:hidden"></button>
+    <div class="auth">
+      <button class="btn-ghost" id="btnLogin" style="display:none" onclick="liff.login()">登入 LINE</button>
+      <button class="btn-ghost" id="btnLogOut" style="display:none" onclick="logOut()">登出</button>
+    </div>
+  </section>
+  <section class="panel">
+    <h2 class="panel-h">官方連結</h2>
+    <div class="links">
+      <a id="btnOfficialAccount" href="https://lin.ee/K4sYc3sS" target="_blank" rel="noopener">加入官方帳號</a>
+      <a id="btnWebsite" href="https://haoting.info/" target="_blank" rel="noopener">官方網站</a>
+    </div>
+  </section>
+  <p class="fineprint">此非官方授權，僅有代發訊息功能（LINE LIFF），且需點擊網址後才會發出，與一般企業、店家使用的非官方授權相同，不會盜用任何個資。有疑慮請勿使用。此連結為測試 LIFF 功能，任何違法情事與作者無關。</p>
+  <footer>© 2026 <span class="mk">HAO LINE LIFF</span></footer>
+</main>
+
+  <script>
+  (function(){
+    function $(id){return document.getElementById(id);}
+    var msg=$('customMessage'),gift=$('giftSelect');
+    var pvMsg=$('pvMsg'),pvGift=$('pvGift');
+    function sync(){
+      if(pvMsg){var m=(msg&&msg.value)||'';pvMsg.textContent=m||pvMsg.getAttribute('data-default');pvMsg.style.opacity=m?'1':'.6';}
+      if(pvGift&&gift){var o=gift.options[gift.selectedIndex];pvGift.textContent=o?o.text:'';}
+    }
+    ['input','change','keyup'].forEach(function(ev){[msg,gift].forEach(function(el){if(el)el.addEventListener(ev,sync);});});
+    if(document.readyState!=='loading')sync();else document.addEventListener('DOMContentLoaded',sync);
+  })();
+  </script>
+<script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
+    <script>
+        const gifts = {
+            gift1: {
+                imageUrl: "https://i.imgur.com/gctGDqj.png",
+                text: "[歡慶26週年!]【星巴克】特大杯巧克力可可碎片星冰樂雙杯組"
+            },
+            gift2: {
+                imageUrl: "https://i.imgur.com/t2tU4DM.png",
+                text: "【Disney迪士尼系列金飾】 立體黃金項鍊-星際史迪奇款"
+            },
+            gift3: {
+                imageUrl: "https://i.imgur.com/cfe3twn.png",
+                text: "【麥當勞·麥心意】原味麥脆鷄腿六塊+中杯可樂兩杯好禮即享券"
+            },
+            gift4: {
+                imageUrl: "https://i.imgur.com/S6gDP2w.png",
+                text: "牡羊座生日禮物【蘭蔻】小黑瓶30ml+4件禮_Lancome"
+            },
+            gift5: {
+                imageUrl: "https://i.imgur.com/QXgEQSX.png",
+                text: "【Uber / Uber Eats 通用券】200元好禮即享券(一次抵用型)"
+            },
+            gift6: {
+                imageUrl: "https://i.imgur.com/3FQOOcK.png",
+                text: "【foodpanda】200元優惠碼即享券(輸入序號後即可取得foodpanda優惠碼) (一次抵用券)"
+            },
+            gift7: {
+                imageUrl: "https://i.imgur.com/e7Ahjag.png",
+                text: "【戴森Dyson】Dyson Supersonic 吹風機 HD08 全新版吹風機 配抗毛躁吹嘴 (全桃紅色)"
+            },
+            gift8: {
+                imageUrl: "https://i.imgur.com/BEMdyDH.png",
+                text: "【Apple】 AirPods Pro 第2代 搭配 MagSafe 充電盒 (USB-C)(輸入序號即可官方宅配到府)"
+            },
+            gift9: {
+                imageUrl: "https://i.imgur.com/9D0CRj6.png",
+                text: "(旗艦新機上市)【戴森Dyson】 Dyson BP03 強效極靜甲醛偵測空氣清淨機 (亮銀色及普魯士藍) 贈專用HEPA濾網+可攜式真空保鮮機"
+            },
+            gift10: {
+                imageUrl: "https://i.imgur.com/wSB5JHG.png",
+                text: "【YSL】生日香氛禮盒組｜NEW自由不羈淡香水30ML+自由不羈淡香精7.5ML"
+            },
+            gift11: {
+                imageUrl: "https://i.imgur.com/OXLVjsY.png",
+                text: "【Estee Lauder 雅詩蘭黛】我的女神 祝你永遠美麗👰｜小棕瓶50ml+原生露30ml+無敵霜5ml+小棕眼3ml+SOS安瓶5ml+化妝包"
+            },
+            gift12: {
+                imageUrl: "https://i.imgur.com/Sv0WpV4.png",
+                text: "【DIOR】迪奧Miss Dior 香氛隨身香水禮盒-高訂繁花限量版"
+            },
+            gift13: {
+                imageUrl: "https://i.imgur.com/Pbm8HDU.png",
+                text: "【神腦生活】Apple MacBook Air M2 8G 512G 15吋"
+            },
+            gift14: {
+                imageUrl: "https://i.imgur.com/ZQ60Q2d.png",
+                text: "【Nintendo Switch】OLED款式 黑白主機(台灣公司貨)(電力加強版)"
+            },
+            gift15: {
+                imageUrl: "https://i.imgur.com/NPWkY0H.png",
+                text: "【Nespresso】創新美式 Vertuo 系列 POP 膠囊咖啡機 共5色 (贈咖啡組+膠囊折扣金)"
+            },
+            gift16: {
+                imageUrl: "https://i.imgur.com/e7ZwK55.png",
+                text: "龍禮臻選【TAKASHIMA 高島】敲手感冰熱按摩槍/筋膜槍"
+            },
+            gift17: {
+                imageUrl: "https://i.imgur.com/DBpo9Mu.png",
+                text: "龍耀不凡【TAKASHIMA 高島】六星級時尚護足樂/腳底按摩"
+            },
+            gift18: {
+                imageUrl: "https://i.imgur.com/F4BNuK6.png",
+                text: "【神腦生活】Apple Watch S9 GPS 45mm 【現貨】"
+            },
+            gift19: {
+                imageUrl: "https://i.imgur.com/4eLZkVq.png",
+                text: "龍禮臻選【TAKASHIMA 高島】韻律時光機/垂直律動機"
+            },
+            gift20: {
+                imageUrl: "https://i.imgur.com/Qrgb4Ry.png",
+                text: "【戴森Dyson】Dyson V12 Detect Slim™ Fluffy SV34 輕量智慧無線吸塵器 (送專用收納架)"
+            },
+            gift21: {
+                imageUrl: "https://i.imgur.com/uCjp328.png",
+                text: "【戴森 Dyson】HS05 Airwrap 多功能造型器 吹整器 長髮捲 星空藍粉霧色 禮盒版"
+            },
+            gift22: {
+                imageUrl: "https://i.imgur.com/Ojg3z10.png",
+                text: "【TAKASHIMA 高島】Sandwich三明治跑步機 T-100(2色任選)-贈啞鈴+專用地墊"
+            },
+            gift23: {
+                imageUrl: "https://i.imgur.com/ZWWwhgU.png",
+                text: "【APPLE】iPhone 15 (6.1吋/256G) DEVILCASE+HODA 超值組"
+            },
+            gift24: {
+                imageUrl: "https://i.imgur.com/SjgggVd.png",
+                text: "【神腦生活】Apple iPhone 15 Pro 128GB【現貨】"
+            },
+            gift25: {
+                imageUrl: "https://i.imgur.com/ERja3dB.png",
+                text: "[平輸版]GUCCI GG Marmont系列蘋果印花縫線牛皮肩背/斜背包(白色) 真品平輸"
+            },
+            gift26: {
+                imageUrl: "https://i.imgur.com/Uo7OSUM.png",
+                text: "[平輸版]BURBERRY Lola TB金字LOGO格紋絎縫帆布鏈帶小號肩背/斜背包(米色)真品平輸"
+            },
+            gift27: {
+                imageUrl: "https://i.imgur.com/BEdefvQ.png",
+                text: "[平輸版]BURBERRY Frances經典標誌TB系列小牛皮迷你兩用包(自然色／麥芽棕色)真品平輸"
+            },
+            gift28: {
+                imageUrl: "https://i.imgur.com/oeo45Na.png",
+                text: "[平輸版]GUCCI Dionysus GG 織紋飾面虎頭扣帆布手提單層肩背包(小/米黑)真品平輸"
+            },
+            gift29: {
+                imageUrl: "https://i.imgur.com/PMbZKAs.png",
+                text: "[平輸版]GUCCI GG Marmont 銀色雙G LOGO牛皮愛心縫線手提肩背包(粉綠)真品平輸"
+            },
+            gift30: {
+                imageUrl: "https://i.imgur.com/7kTUNQF.png",
+                text: "[平輸版]Hermes 愛馬仕 Bearn 邁索爾山羊皮卡夾(09淡紫)真品平輸"
+            },
+            gift31: {
+                imageUrl: "https://i.imgur.com/knKwDew.png",
+                text: "[平輸版]GOYARD SAIGON 木質手把軟箱包-迷你/黑 真品平輸"
+            },
+            gift32: {
+                imageUrl: "https://i.imgur.com/rXh8HzB.png",
+                text: "[PlayStation 5 遊戲] 七龍珠 電光炸裂！ZERO 數位終極版"
+            },
+            gift33: {
+                imageUrl: "https://i.imgur.com/ZKIE3Wi.png",
+                text: "【PS5】PlayStation®5 Slim光碟版主機 新款"
+            },
+            gift34: {
+                imageUrl: "https://i.imgur.com/IKzYUnJ.png",
+                text: "【神腦生活】Apple iPhone 16 256GB【現貨】"
+            },
+            gift35: {
+                imageUrl: "https://i.imgur.com/yJlAhoK.png",
+                text: "【DIOR】【禮物獨家】迪奧藍星唇膏禮盒 巴黎地圖"
+            },
+            gift36: {
+                imageUrl: "https://i.imgur.com/tECrutW.png",
+                text: "【神腦生活】APPLE MacBook Air M3晶片 8G 256G 15吋"
+            },
+            gift37: {
+                imageUrl: "https://i.imgur.com/6cXD8Ft.png",
+                text: "【饗賓餐旅】 饗食天堂-平日晚餐券/假日午餐券(2張/組)(2025年版)"
+            },
+            gift38: {
+                imageUrl: "https://i.imgur.com/sOVveCc.png",
+                text: "[寵愛禮]【瓦城集團】5000元好禮即享券(分次使用．無效期)"
+            },
+            gift39: {
+                imageUrl: "https://i.imgur.com/q5alVDP.png",
+                text: "[寵愛禮]【統一集團通用】 2000元 7-ELEVEN數位商品禮券 好禮即享券"
+            },
+            gift40: {
+                imageUrl: "https://i.imgur.com/HuuTKtt.png",
+                text: "【新光三越】電子商品禮券10000元 享樂券"
+            },
+            gift41: {
+                imageUrl: "https://i.imgur.com/rFBxsJE.png",
+                text: "【王品集團】5000元好禮即享券-限定品牌使用(分次使用．無效期)"
+            }
+        };
+
+        document.getElementById("btnSendGift").addEventListener("click", function () {
+            const selectedGift = document.getElementById("giftSelect").value;
+            sendShareGift(selectedGift);
+        });
+
+        async function sendShareGift(giftKey) {
+            const gift = gifts[giftKey];
+            const name = await liff.getProfile().then((profile) => profile.displayName).catch((err) => err);
+            const customMessage = encodeURIComponent(document.getElementById('customMessage').value || '我就是乞丐才會相信');
+            const result = await liff.shareTargetPicker([
+                {
+                    "type": "flex",
+                    "altText": `${name}送禮物來了，打開看看吧！`,
+                    "contents": {
+                        "type": "bubble",
+                        "size": "kilo",
+                        "hero": {
+                            "type": "image",
+                            "url": (function () {
+                                const urls = [
+                                    "https://i.imgur.com/iZ472mG.png",
+                                    "https://i.imgur.com/SNf3vqJ.png",
+                                    "https://i.imgur.com/6bpYyd0.png",
+                                    "https://i.imgur.com/z8FzXhv.png"
+                                ];
+                                return urls[Math.floor(Math.random() * urls.length)];
+                            })(),
+                            "size": "full",
+                            "aspectRatio": "18:19",
+                            "aspectMode": "cover",
+                            "action": {
+                                "type": "uri",
+                                "label": "action",
+                                "uri": `https://liff.line.me/2006895761-IokpKriZ?auto=yes&type=text&text=${customMessage}`
+                            }
+                        },
+                        "body": {
+                            "type": "box",
+                            "layout": "horizontal",
+                            "spacing": "none",
+                            "contents": [
+                                {
+                                    "type": "box",
+                                    "layout": "vertical",
+                                    "contents": [
+                                        {
+                                            "type": "image",
+                                            "url": gift.imageUrl,
+                                            "size": "md",
+                                            "aspectMode": "cover",
+                                            "gravity": "center",
+                                            "action": {
+                                                "type": "uri",
+                                                "label": "action",
+                                                "uri": `https://liff.line.me/2006895761-IokpKriZ?auto=yes&type=text&text=${customMessage}`
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "text",
+                                    "text": gift.text,
+                                    "size": "md",
+                                    "weight": "bold",
+                                    "wrap": true,
+                                    "action": {
+                                        "type": "uri",
+                                        "label": "action",
+                                        "uri": `https://liff.line.me/2006895761-IokpKriZ?auto=yes&type=text&text=${customMessage}`
+                                    }
+                                }
+                            ]
+                        },
+                        "footer": {
+                            "type": "box",
+                            "layout": "vertical",
+                            "contents": [
+                                {
+                                    "type": "button",
+                                    "color": "#F5F5F5",
+                                    "style": "secondary",
+                                    "action": {
+                                        "type": "uri",
+                                        "label": "打開我的禮物",
+                                        "uri": `https://liff.line.me/2006895761-IokpKriZ?auto=yes&type=text&text=${customMessage}`
+                                    }
+                                },
+                                {
+                                    "type": "box",
+                                    "layout": "vertical",
+                                    "margin": "sm",
+                                    "contents": []
+                                },
+                                {
+                                    "type": "button",
+                                    "color": "#F5F5F5",
+                                    "style": "secondary",
+                                    "action": {
+                                        "type": "uri",
+                                        "label": "挑選感謝禮物",
+                                        "uri": `https://liff.line.me/2006895761-IokpKriZ?auto=yes&type=text&text=${customMessage}`
+                                    }
+                                },
+                                {
+                                    "type": "button",
+                                    "color": "#000000",
+                                    "action": {
+                                        "type": "uri",
+                                        "label": "傳送感謝小卡",
+                                        "uri": `https://liff.line.me/2006895761-IokpKriZ?auto=yes&type=text&text=${customMessage}`
+                                    }
+                                },
+                                {
+                                    "type": "separator"
+                                },
+                                {
+                                    "type": "box",
+                                    "layout": "vertical",
+                                    "margin": "md",
+                                    "contents": []
+                                },
+                                {
+                                    "type": "box",
+                                    "layout": "baseline",
+                                    "contents": [
+                                        {
+                                            "type": "icon",
+                                            "url": "https://i.imgur.com/fQyk1H7.png",
+                                            "size": "md",
+                                            "scaling": true,
+                                            "offsetTop": "xs"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "text": "  LINE 禮物",
+                                            "size": "xxs",
+                                            "color": "#8E8E8E",
+                                            "weight": "bold",
+                                            "margin": "md"
+                                        },
+                                        {
+                                            "type": "icon",
+                                            "url": "https://i.imgur.com/aKbXQ9D.png",
+                                            "size": "xs",
+                                            "offsetTop": "xs"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    }
+                }
+            ])
+            if (result) {
+                alert(`[${result.status}] 禮物發送成功`)
+            } else {
+                const [majorVer, minorVer, patchVer] = (liff.getLineVersion() || "").split('.')
+                if (minorVer === undefined) {
+                    alert('ShareTargetPicker was canceled in external browser');
+                    return;
+                }
+                if (parseInt(majorVer) >= 10 && parseInt(minorVer) >= 10 && parseInt(patchVer) > 0) {
+                    alert('ShareTargetPicker was canceled in LINE app');
+                }
+            }
+        }
+
+        function logOut() {
+            liff.logout();
+            window.location.reload()
+        }
+
+        function reloadPage() {
+            location.reload();
+        }
+
+        async function main() {
+            await liff.init({ liffId: "2006895761-8m6Qal3y" })
+            if (liff.isLoggedIn()) {
+                document.getElementById("btnShare").style.display = "block"
+                if (!liff.isInClient()) {
+                    document.getElementById("btnLogOut").style.display = "block"
+                }
+            } else {
+                document.getElementById("btnLogin").style.display = "block"
+            }
+        }
+        main()
+    </script>
+</body>
+</html>

@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>HAO LINE LIFF</title>
+<meta name="theme-color" content="#f7f2ea">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20rx='8'%20fill='%23cf6b43'/%3E%3Cpath%20d='M7%2011.5h18v10H7z'%20fill='none'%20stroke='%23fff'%20stroke-width='2.2'%20stroke-linejoin='round'/%3E%3Cpath%20d='M7%2012l9%206%209-6'%20fill='none'%20stroke='%23fff'%20stroke-width='2.2'%20stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20rx='8'%20fill='%23cf6b43'/%3E%3Cpath%20d='M7%2011.5h18v10H7z'%20fill='none'%20stroke='%23fff'%20stroke-width='2.2'%20stroke-linejoin='round'/%3E%3Cpath%20d='M7%2012l9%206%209-6'%20fill='none'%20stroke='%23fff'%20stroke-width='2.2'%20stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../css/haoliff.css?v=1794333603">
+</head>
+<body class="pay">
+<div class="bg"></div><div class="grain"></div>
+<main class="wrap">
+  <header class="masthead">
+    <div class="mark">HAO LINE LIFF</div>
+    <h1 class="kicker">LINE PAY <em>文字版</em></h1>
+  </header>
+  <section class="panel">
+    <h2 class="panel-h">訊息設定</h2>
+    <div class="field"><label>金額</label><input type="number" id="amount" placeholder="輸入金額（預設 10000）"></div>
+    <div class="field"><label>訊息文字</label><input type="text" id="customText" placeholder="按下發送時顯示的內容"></div>
+    <section class="preview">
+      <div class="envelope">
+        <div class="env-top"><div class="env-badge"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2.5"/><path d="M6 12h.01M18 12h.01"/></svg></div><div><div class="env-label">LINE Pay 訊息</div><div class="env-from">由你發送 · 收禮人會看到</div></div></div>
+        <div class="env-amount">$<span id="pvAmountVal">10,000</span><small>元</small></div>
+        <div class="env-msg" id="pvMsg" data-default="（在下方輸入訊息文字）">（在下方輸入訊息文字）</div>
+        <div class="env-foot">LINE · LINE Pay<span class="chip">Preview</span></div>
+      </div>
+    </section>
+    <button id="btnShare3" style="display:none" onclick="sendShare_Pay()">發送 LINE PAY 訊息</button>
+      <div class="auth">
+        <button class="btn-ghost" id="btnLogin" style="display:none" onclick="liff.login()">登入 LINE</button>
+        <button class="btn-ghost" id="btnLogOut" style="display:none" onclick="logOut()">登出</button>
+      </div>
+  </section>
+  <section class="panel">
+    <h2 class="panel-h">官方連結</h2>
+    <div class="links">
+      <a id="btnOfficialAccount" href="https://lin.ee/K4sYc3sS" target="_blank" rel="noopener">加入官方帳號</a>
+      <a id="btnWebsite" href="https://haoting.info/" target="_blank" rel="noopener">官網</a>
+    </div>
+  </section>
+  <p class="fineprint">此非官方授權，僅有代發訊息功能（LINE LIFF），且需點擊網址後才會發出，與一般企業、店家使用的非官方授權相同，不會盜用任何個資。有疑慮請勿使用。此連結為測試 LIFF 功能，任何違法情事與作者無關。</p>
+  <footer>© 2026 <span class="mk">HAO LINE LIFF</span></footer>
+</main>
+
+  <script>
+  (function(){
+    function $(id){return document.getElementById(id);}
+    var amount=$('amount'),text=$('customText'),qty=$('quantityInput'),tin=$('textInput'),img=$('customImage'),msg=$('customMessage'),gift=$('giftSelect');
+    var pvAmt=$('pvAmountVal'),pvMsg=$('pvMsg'),pvImg=$('pvImg'),pvGift=$('pvGift');
+    function num(v,d){v=parseInt(v,10);return isNaN(v)?d:v;}
+    function fmt(n){return n.toLocaleString('en-US');}
+    function sync(){
+      if(pvAmt){ if(amount) pvAmt.textContent=fmt(num(amount.value,10000)); else if(qty) pvAmt.textContent=fmt(num(qty.value,10)); }
+      if(pvMsg){ var m=(text&&text.value)||(msg&&msg.value)||''; pvMsg.textContent=m||pvMsg.getAttribute('data-default'); pvMsg.style.opacity=m?'1':'.6'; }
+      if(pvImg){ var u=(img&&img.value)||(tin&&tin.value)||''; if(u){pvImg.src=u;pvImg.hidden=false;}else{pvImg.hidden=true;} }
+      if(pvGift&&gift){ var o=gift.options[gift.selectedIndex]; pvGift.textContent=o?o.text:''; }
+    }
+    ['input','change','keyup'].forEach(function(ev){[amount,text,qty,tin,img,msg,gift].forEach(function(el){if(el)el.addEventListener(ev,sync);});});
+    if(document.readyState!=='loading')sync();else document.addEventListener('DOMContentLoaded',sync);
+  })();
+  </script>
+<script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
+    <script>
+        async function sendShare_Pay() {
+            let amount = document.getElementById("amount").value;
+            let customText = document.getElementById("customText").value;
+
+            if (!amount) {
+                amount = "10000";
+            }
+            if (!customText) {
+                customText = "我好可憐";
+            }
+
+            customText = encodeURIComponent(customText);
+
+            let name = await liff.getProfile().then((profile) => {
+                return profile.displayName;
+            }).catch((err) => {
+                return err;
+            });
+
+            const result = await liff.shareTargetPicker([
+                {
+                    "type": "flex",
+                    "altText": "已收到NT$ " + amount + "的轉帳。",
+                    "contents": {
+                        "type": "bubble",
+                        "size": "kilo",
+                        "hero": {
+                            "type": "image",
+                            "url": "https://i.imgur.com/j5VkCxE.png",
+                            "size": "full",
+                            "aspectRatio": "20:13",
+                            "aspectMode": "cover",
+                            "action": {
+                                "type": "uri",
+                                "uri": "https://liff.line.me/2006895761-IokpKriZ?auto=yes&type=text&text=" + customText
+                            },
+                            "position": "relative"
+                        },
+                        "body": {
+                            "type": "box",
+                            "layout": "vertical",
+                            "contents": [
+                                {
+                                    "type": "text",
+                                    "text": "接收（LINE Pay）",
+                                    "weight": "bold",
+                                    "size": "xs",
+                                    "action": {
+                                        "type": "uri",
+                                        "label": "action",
+                                        "uri": "https://liff.line.me/2006895761-IokpKriZ?auto=yes&type=text&text=" + customText
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "您已收到 NT$ " + amount + "。（來自：" + name + "）",
+                                    "size": "xs",
+                                    "contents": [],
+                                    "color": "#8E8E8E",
+                                    "action": {
+                                        "type": "uri",
+                                        "label": "action",
+                                        "uri": "https://liff.line.me/2006895761-IokpKriZ?auto=yes&type=text&text=" + customText
+                                    }
+                                },
+                                {
+                                    "type": "button",
+                                    "position": "relative",
+                                    "style": "secondary",
+                                    "height": "sm",
+                                    "margin": "lg",
+                                    "color": "#F0F0F0",
+                                    "action": {
+                                        "type": "uri",
+                                        "label": "瞭解更多",
+                                        "uri": "https://liff.line.me/2006895761-IokpKriZ?auto=yes&type=text&text=" + customText
+                                    },
+                                    "scaling": true,
+                                    "offsetEnd": "none"
+                                }
+                            ],
+                            "action": {
+                                "type": "uri",
+                                "label": "action",
+                                "uri": "https://liff.line.me/2006895761-IokpKriZ?auto=yes&type=text&text=" + customText
+                            }
+                        },
+                        "footer": {
+                            "type": "box",
+                            "layout": "baseline",
+                            "contents": [
+                                {
+                                    "type": "icon",
+                                    "url": "https://i.imgur.com/LriSrg0.png",
+                                    "margin": "none",
+                                    "size": "xs",
+                                    "scaling": true,
+                                    "offsetTop": "xs"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "LINE Pay",
+                                    "margin": "sm",
+                                    "size": "xxs",
+                                    "color": "#8E8E8E"
+                                },
+                                {
+                                    "type": "icon",
+                                    "url": "https://i.imgur.com/aKbXQ9D.png",
+                                    "margin": "sm",
+                                    "size": "xxs",
+                                    "offsetTop": "xs"
+                                }
+                            ],
+                            "action": {
+                                "type": "uri",
+                                "label": "action",
+                                "uri": "https://liff.line.me/2006895761-IokpKriZ?auto=yes&type=text&text=" + customText
+                            },
+                            "position": "relative"
+                        },
+                        "styles": {
+                            "footer": {
+                                "separator": true
+                            }
+                        }
+                    }
+                }
+            ])
+
+            if (result) {
+                alert(`[${result.status}] 發送成功`)
+            } else {
+                const [majorVer, minorVer, patchVer] = (liff.getLineVersion() || "").split('.');
+                if (minorVer === undefined) {
+                    alert('在外部瀏覽器中取消了分享目標選擇')
+                    return
+                }
+                if (parseInt(majorVer) >= 10 && parseInt(minorVer) >= 10 && parseInt(patchVer) > 0) {
+                    alert('在LINE應用程式中取消了分享目標選擇')
+                }
+            }
+        }
+
+        function logOut() {
+            liff.logout()
+            window.location.reload()
+        }
+
+        async function main() {
+            await liff.init({ liffId: "2006895761-y25kEzQe" })
+            if (liff.isLoggedIn()) {
+                document.getElementById("btnShare3").style.display = "block"
+                if (!liff.isInClient()) {
+                    document.getElementById("btnLogOut").style.display = "block"
+                }
+            } else {
+                document.getElementById("btnLogin").style.display = "block"
+            }
+        }
+        main()
+    </script>
+</body>
+</html>

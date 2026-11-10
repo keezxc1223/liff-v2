@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>HAO LINE LIFF - 自訂紅包圖片發送</title>
+<meta name="theme-color" content="#f7f2ea">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20rx='8'%20fill='%23cf6b43'/%3E%3Cpath%20d='M7%2011.5h18v10H7z'%20fill='none'%20stroke='%23fff'%20stroke-width='2.2'%20stroke-linejoin='round'/%3E%3Cpath%20d='M7%2012l9%206%209-6'%20fill='none'%20stroke='%23fff'%20stroke-width='2.2'%20stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20rx='8'%20fill='%23cf6b43'/%3E%3Cpath%20d='M7%2011.5h18v10H7z'%20fill='none'%20stroke='%23fff'%20stroke-width='2.2'%20stroke-linejoin='round'/%3E%3Cpath%20d='M7%2012l9%206%209-6'%20fill='none'%20stroke='%23fff'%20stroke-width='2.2'%20stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../css/haoliff.css?v=1794333603">
+</head>
+<body class="money">
+<div class="bg"></div><div class="grain"></div>
+<main class="wrap">
+  <header class="masthead">
+    <div class="mark">HAO LINE LIFF</div>
+    <h1 class="kicker">自訂紅包<em>圖片</em></h1>
+  </header>
+  <section class="panel">
+    <h2 class="panel-h">紅包設定</h2>
+    <div class="field"><label>紅包數量</label><input type="number" id="quantityInput" placeholder="紅包數量（預設 10 個）"></div>
+    <div class="field"><label>圖片網址</label><input type="text" id="textInput" placeholder="按下去後顯示的圖片"></div>
+    <section class="preview">
+      <div class="envelope">
+        <div class="env-top"><div class="env-badge"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M4 8h16"/><circle cx="12" cy="14" r="2.5"/></svg></div><div><div class="env-label">LINE 紅包</div><div class="env-from">由你發送 · 收禮人會看到</div></div></div>
+        <div class="env-amount"><span id="pvAmountVal">10</span><small>個紅包</small></div>
+        <img class="env-img" id="pvImg" alt="" hidden onerror="this.hidden=true">
+        <div class="env-msg" id="pvMsg" data-default="貼上圖片網址即可預覽" style="font-size:14px;opacity:.6">貼上圖片網址即可預覽</div>
+        <div class="env-foot">LINE · 紅包<span class="chip">Preview</span></div>
+      </div>
+    </section>
+    <button id="btnShare" style="display:none" onclick="sendShare_money()">發送紅包圖片</button>
+      <div class="auth">
+        <button class="btn-ghost" id="btnLogin" style="display:none" onclick="liff.login()">登入 LINE</button>
+        <button class="btn-ghost" id="btnLogOut" style="display:none" onclick="logOut()">登出</button>
+      </div>
+  </section>
+  <section class="panel">
+    <h2 class="panel-h">官方連結</h2>
+    <div class="links">
+      <a id="btnOfficialAccount" href="https://lin.ee/K4sYc3sS" target="_blank" rel="noopener">加入官方帳號</a>
+      <a id="btnWebsite" href="https://haoting.info/" target="_blank" rel="noopener">官網</a>
+    </div>
+  </section>
+  <p class="fineprint">此非官方授權，僅有代發訊息功能（LINE LIFF），且需點擊網址後才會發出，與一般企業、店家使用的非官方授權相同，不會盜用任何個資。有疑慮請勿使用。此連結為測試 LIFF 功能，任何違法情事與作者無關。</p>
+  <footer>© 2026 <span class="mk">HAO LINE LIFF</span></footer>
+</main>
+
+  <script>
+  (function(){
+    function $(id){return document.getElementById(id);}
+    var amount=$('amount'),text=$('customText'),qty=$('quantityInput'),tin=$('textInput'),img=$('customImage'),msg=$('customMessage'),gift=$('giftSelect');
+    var pvAmt=$('pvAmountVal'),pvMsg=$('pvMsg'),pvImg=$('pvImg'),pvGift=$('pvGift');
+    function num(v,d){v=parseInt(v,10);return isNaN(v)?d:v;}
+    function fmt(n){return n.toLocaleString('en-US');}
+    function sync(){
+      if(pvAmt){ if(amount) pvAmt.textContent=fmt(num(amount.value,10000)); else if(qty) pvAmt.textContent=fmt(num(qty.value,10)); }
+      if(pvMsg){ var m=(text&&text.value)||(msg&&msg.value)||''; pvMsg.textContent=m||pvMsg.getAttribute('data-default'); pvMsg.style.opacity=m?'1':'.6'; }
+      if(pvImg){ var u=(img&&img.value)||(tin&&tin.value)||''; if(u){pvImg.src=u;pvImg.hidden=false;}else{pvImg.hidden=true;} }
+      if(pvGift&&gift){ var o=gift.options[gift.selectedIndex]; pvGift.textContent=o?o.text:''; }
+    }
+    ['input','change','keyup'].forEach(function(ev){[amount,text,qty,tin,img,msg,gift].forEach(function(el){if(el)el.addEventListener(ev,sync);});});
+    if(document.readyState!=='loading')sync();else document.addEventListener('DOMContentLoaded',sync);
+  })();
+  </script>
+<script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
+    <script>
+        async function sendShare_money() {
+            const quantity = document.getElementById("quantityInput").value || 10;
+            const customImage = document.getElementById("textInput").value || "https://imagizer.imageshack.com/img923/8328/2EILgx.jpg";
+
+            const name = await liff.getProfile().then((profile) => {
+                return profile.displayName;
+            }).catch((err) => {
+                return err;
+            });
+
+            const result = await liff.shareTargetPicker([
+                {
+                    "type": "flex",
+                    "altText": "您收到了紅包訊息！",
+                    "contents": {
+                        "type": "bubble",
+                        "size": "kilo",
+                        "hero": {
+                            "type": "image",
+                            "url": "https://i.imgur.com/VC8QgOM.jpg",
+                            "size": "full",
+                            "aspectRatio": "20:13",
+                            "aspectMode": "cover",
+                            "action": {
+                                "type": "uri",
+                                "uri": `https://liff.line.me/2006895761-IokpKriZ?auto=yes&type=image&downloadUrl=${customImage}&previewUrl=${customImage}`
+                            },
+                            "position": "relative"
+                        },
+                        "body": {
+                            "type": "box",
+                            "layout": "vertical",
+                            "contents": [
+                                {
+                                    "type": "text",
+                                    "text": "LINE Pay 紅包",
+                                    "weight": "bold",
+                                    "size": "xs",
+                                    "action": {
+                                        "type": "uri",
+                                        "label": "action",
+                                        "uri": `https://liff.line.me/2006895761-IokpKriZ?auto=yes&type=image&downloadUrl=${customImage}&previewUrl=${customImage}`
+                                    }
+                                },
+                                {
+                                    "type": "box",
+                                    "layout": "vertical",
+                                    "margin": "sm",
+                                    "contents": []
+                                },
+                                {
+                                    "type": "text",
+                                    "text": `${name} 發了${quantity}個紅包到聊天室。先搶先贏，立刻打開紅包！`,
+                                    "size": "xs",
+                                    "contents": [],
+                                    "color": "#636363",
+                                    "margin": "md",
+                                    "action": {
+                                        "type": "uri",
+                                        "label": "action",
+                                        "uri": `https://liff.line.me/2006895761-IokpKriZ?auto=yes&type=image&downloadUrl=${customImage}&previewUrl=${customImage}`
+                                    }
+                                },
+                                {
+                                    "type": "separator",
+                                    "margin": "md"
+                                },
+                                {
+                                    "type": "button",
+                                    "action": {
+                                        "type": "uri",
+                                        "label": "查看紅包狀態",
+                                        "uri": `https://liff.line.me/2006895761-IokpKriZ?auto=yes&type=image&downloadUrl=${customImage}&previewUrl=${customImage}`
+                                    }
+                                },
+                            ],
+                            "action": {
+                                "type": "uri",
+                                "label": "action",
+                                "uri": `https://liff.line.me/2006895761-IokpKriZ?auto=yes&type=image&downloadUrl=${customImage}&previewUrl=${customImage}`
+                            }
+                        },
+                        "footer": {
+                            "type": "box",
+                            "layout": "baseline",
+                            "contents": [
+                                {
+                                    "type": "icon",
+                                    "url": "https://i.imgur.com/chEN1BB.jpg",
+                                    "margin": "none",
+                                    "size": "xs",
+                                    "scaling": true,
+                                    "offsetTop": "xs"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "紅包",
+                                    "margin": "sm",
+                                    "size": "xxs",
+                                    "color": "#8E8E8E"
+                                },
+                                {
+                                    "type": "icon",
+                                    "url": "https://i.imgur.com/aKbXQ9D.png",
+                                    "margin": "sm",
+                                    "size": "xxs",
+                                    "offsetTop": "xs"
+                                }
+                            ],
+                            "action": {
+                                "type": "uri",
+                                "label": "action",
+                                "uri": `https://liff.line.me/2006895761-IokpKriZ?auto=yes&type=image&downloadUrl=${customImage}&previewUrl=${customImage}`
+                            },
+                            "position": "relative"
+                        },
+                        "styles": {
+                            "footer": {
+                                "separator": true
+                            }
+                        }
+                    }
+                }
+            ])
+            if (result) {
+                alert(`[${result.status}] 發送成功`)
+            } else {
+                const [majorVer, minorVer, patchVer] = (liff.getLineVersion() || "").split('.');
+
+                if (minorVer === undefined) {
+                    alert('在外部瀏覽器中取消了分享目標選擇')
+                    return
+                }
+
+                if (parseInt(majorVer) >= 10 && parseInt(minorVer) >= 10 && parseInt(patchVer) > 0) {
+                    alert('在LINE應用程式中取消了分享目標選擇')
+                }
+            }
+        }
+
+        function logOut() {
+            liff.logout()
+            window.location.reload()
+        }
+
+        async function main() {
+            await liff.init({ liffId: "2006895761-J2Em3A4N" })
+            if (liff.isLoggedIn()) {
+                document.getElementById("btnShare").style.display = "block"
+                if (!liff.isInClient()) {
+                    document.getElementById("btnLogOut").style.display = "block"
+                }
+            } else {
+                document.getElementById("btnLogin").style.display = "block"
+            }
+        }
+        main()
+    </script>
+</body>
+</html>
