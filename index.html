@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>HAO LINE LIFF</title>
+    <link rel="shortcut icon" href="./assets/image/favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/image/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="./assets/image/android-icon-192x192.png">
+    <link rel="manifest" href="./manifest.json">
+    <meta name="theme-color" content="#140d0a">
+    <!-- LIFF -->
+    <script src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
+    <!-- vConsole -->
+    <script src="./assets/js/vconsole.min.js"></script>
+    <script src="./assets/js/liff-starter-V2.min.js?v=1794331665"></script>
+    <!-- Styles -->
+    <link rel="stylesheet" href="./assets/css/haoliff-v2.css?v=1794332403">
+</head>
+<body>
+    <div class="bg"></div><div class="grain"></div>
+    <div class="wrap">
+    <header class="masthead">
+        <div class="mark">HAO LINE LIFF</div>
+        <h1>訊息發送台</h1>
+        <p>選擇類型 · 設定內容 · 送到聊天室</p>
+    </header>
+    <form class="form-signin" id="content">
+        <div class="text-center mb-4">
+            <h1 class="h3 mb-3 font-weight-strong">訊息發送台</h1>
+            <p align="center" style="font-size: 15px;" id="greet">選擇類型、設定內容，直接送到聊天室</p>
+        </div>
+        <div class="form-label-group">
+            <select class="custom-select d-block w-100" id="type" onchange="changeType()" required>
+                <option value="choose" disabled hidden selected>選擇訊息類型</option>
+                <option value="profile">個人檔案</option>
+                <option value="text">文字訊息</option>
+                <option value="image">圖片</option>
+                <option value="video">影片</option>
+                <option value="audio">音訊</option>
+                <option value="sticker">貼圖</option>
+                <option value="stickerimage">貼圖（含預覽圖）</option>
+                <option value="messages">自訂訊息（JSON）</option>
+                <option value="messagesUrl">自訂訊息（網址）</option>
+                <option value="scanQr">掃描 QR Code</option>
+                <option value="liffToken">取得 LIFF Token</option>
+                <option value="genToken">產生 LINE Token</option>
+            </select>
+        </div>
+        <div class="form-label-group">
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" id="share" class="custom-control-input">
+                <label for="share" class="custom-control-label">改用「分享」給好友？</label>
+            </div>
+        </div>
+        <a href="#" id="liffSendMessage" class="btn btn-lg btn-primary btn-block">發送訊息</a>
+        <p class="mt-5 mb-3 text-muted text-center">© 2026 HAO LINE LIFF</p>
+    </form>
+    </div>
+</body>
+</html>

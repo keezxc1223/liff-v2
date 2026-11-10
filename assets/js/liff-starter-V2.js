@@ -4,7 +4,7 @@ Author :
 update :
 - https://github.com/keezxc1223/
 */
-var liffId = "2002197923-oyY6wJ68";
+var liffId = "2006895761-IokpKriZ";
 var params = location.search.substring(1);
 var url = window.location.href;
 if (params) {
@@ -132,7 +132,7 @@ function initContent(type) {
         input.type = "text";
         input.id = "text";
         input.className = "form-control";
-        input.placeholder = "Text message";
+        input.placeholder = "輸入文字訊息";
         input.required = true;
         if (getParameterByName("text")) {
             input.value = getParameterByName("text");
@@ -148,13 +148,13 @@ function initContent(type) {
         input.type = "text";
         input.id = "packageId";
         input.className = "form-control";
-        input.placeholder = "Text message";
+        input.placeholder = "輸入文字訊息";
         input.required = true;
         if (getParameterByName("packageId")) {
             input.value = getParameterByName("packageId");
         }
         label.htmlFor = "packageId";
-        label.innerHTML = "Sticker Package ID";
+        label.innerHTML = "貼圖包 ID";
         element.appendChild(input);
         element.appendChild(label);
         parent.insertBefore(element, parent.childNodes[4]);
@@ -166,13 +166,13 @@ function initContent(type) {
         input.type = "text";
         input.id = "stickerId";
         input.className = "form-control";
-        input.placeholder = "Preview image url";
+        input.placeholder = "預覽圖片網址";
         input.required = true;
         if (getParameterByName("stickerId")) {
             input.value = getParameterByName("stickerId");
         }
         label.htmlFor = "stickerId";
-        label.innerHTML = "Sticker ID";
+        label.innerHTML = "貼圖 ID";
         element.appendChild(input);
         element.appendChild(label);
         parent.insertBefore(element, parent.childNodes[4]);
@@ -191,7 +191,7 @@ function initContent(type) {
         }
         label.htmlFor = "animation";
         label.className = "custom-control-label";
-        label.innerHTML = "Animation";
+        label.innerHTML = "動態貼圖";
         element.appendChild(input);
         element.appendChild(label);
         checkbox.appendChild(element);
@@ -202,13 +202,13 @@ function initContent(type) {
         input.type = "text";
         input.id = "downloadUrl";
         input.className = "form-control";
-        input.placeholder = "Original content url";
+        input.placeholder = "原始內容網址";
         input.required = true;
         if (getParameterByName("downloadUrl")) {
             input.value = getParameterByName("downloadUrl");
         }
         label.htmlFor = "downloadUrl";
-        label.innerHTML = "Download URL";
+        label.innerHTML = "下載網址";
         element.appendChild(input);
         element.appendChild(label);
         parent.insertBefore(element, parent.childNodes[4]);
@@ -220,13 +220,13 @@ function initContent(type) {
         input.type = "text";
         input.id = "previewUrl";
         input.className = "form-control";
-        input.placeholder = "Preview image url";
+        input.placeholder = "預覽圖片網址";
         input.required = true;
         if (getParameterByName("previewUrl")) {
             input.value = getParameterByName("previewUrl");
         }
         label.htmlFor = "previewUrl";
-        label.innerHTML = "Preview URL";
+        label.innerHTML = "預覽網址";
         element.appendChild(input);
         element.appendChild(label);
         parent.insertBefore(element, parent.childNodes[4]);
@@ -236,13 +236,13 @@ function initContent(type) {
         input.type = "text";
         input.id = "downloadUrl";
         input.className = "form-control";
-        input.placeholder = "Original content url";
+        input.placeholder = "原始內容網址";
         input.required = true;
         if (getParameterByName("downloadUrl")) {
             input.value = getParameterByName("downloadUrl");
         }
         label.htmlFor = "downloadUrl";
-        label.innerHTML = "Download URL";
+        label.innerHTML = "下載網址";
         element.appendChild(input);
         element.appendChild(label);
         parent.insertBefore(element, parent.childNodes[4]);
@@ -251,7 +251,7 @@ function initContent(type) {
         element.id = "data";
         textarea.id = "messages";
         textarea.className = "form-control";
-        textarea.placeholder = "Messages json";
+        textarea.placeholder = "貼上訊息 JSON";
         textarea.rows = "5";
         if (getParameterByName("messages")) {
             textarea.value = getParameterByName("messages");
@@ -264,13 +264,13 @@ function initContent(type) {
         input.type = "text";
         input.id = "messagesUrl";
         input.className = "form-control";
-        input.placeholder = "Messages json url";
+        input.placeholder = "貼上訊息 JSON 網址";
         input.required = true;
         if (getParameterByName("messagesUrl")) {
             input.value = getParameterByName("messagesUrl");
         }
         label.htmlFor = "messagesUrl";
-        label.innerHTML = "Messages JSON URL";
+        label.innerHTML = "訊息 JSON 網址";
         element.appendChild(input);
         element.appendChild(label);
         parent.insertBefore(element, parent.childNodes[4]);
@@ -280,10 +280,10 @@ function initContent(type) {
         input.type = "text";
         input.id = "qrResult";
         input.className = "form-control";
-        input.placeholder = "QR Code Result";
+        input.placeholder = "QR Code 結果";
         input.required = true;
         label.htmlFor = "qrResult";
-        label.innerHTML = "QR Code Result";
+        label.innerHTML = "QR Code 結果";
         element.appendChild(input);
         element.appendChild(label);
         parent.insertBefore(element, parent.childNodes[4]);
@@ -294,10 +294,10 @@ function initContent(type) {
         input.type = "text";
         input.id = "liffToken";
         input.className = "form-control";
-        input.placeholder = "Liff Auth Token";
+        input.placeholder = "LIFF 權杖";
         input.required = true;
         label.htmlFor = "liffToken";
-        label.innerHTML = "Liff Auth Token";
+        label.innerHTML = "LIFF 權杖";
         element.appendChild(input);
         element.appendChild(label);
         parent.insertBefore(element, parent.childNodes[4]);
@@ -308,13 +308,13 @@ function initContent(type) {
         input.type = "text";
         input.id = "lineAuthKey";
         input.className = "form-control";
-        input.placeholder = "Line Auth Key";
+        input.placeholder = "LINE 權杖金鑰";
         input.required = true;
         if (getParameterByName("lineAuthKey")) {
             input.value = getParameterByName("lineAuthKey");
         }
         label.htmlFor = "lineAuthKey";
-        label.innerHTML = "Line Auth Key";
+        label.innerHTML = "LINE 權杖金鑰";
         element.appendChild(input);
         element.appendChild(label);
         parent.insertBefore(element, parent.childNodes[4]);
@@ -335,7 +335,7 @@ function sendLiffMessage() {
         console.error("Error while get profile", err);
     });
     if (type == "profile") {
-        sendMessages([{type: "flex", altText: "Profile " + userDisplayName, contents: {type: "bubble", hero: {type: "image", url: userPictureUrl, size: "full", aspectRatio: "1:1", aspectMode: "cover", action: {type: "uri", uri: "line://app/2002197923-oyY6wJ68?auto=yes&type=image&downloadUrl=" + userPictureUrl + "&previewUrl=" + userPictureUrl } }, body: {type: "box", layout: "vertical", contents: [{type: "text", text: userDisplayName, align: "center", weight: "bold", size: "xl"}, {type: "box", layout: "vertical", margin: "lg", spacing: "sm", contents: [{type: "text", text: userStatusMessage, wrap: true, color: "#666666", size: "sm", maxLines: 5, flex: 5 }] } ] }, footer: {type: "box", layout: "horizontal", spacing: "sm", contents: [{type: "button", style: "primary", height: "sm", color: "#02afff", action: {type: "uri", label: "Open Chat", uri: "https://line.me/ti/g2/JGUODBE4RE"}}, {type: "button", style: "primary", height: "sm", action: {type: "uri", label: "Profile", uri: "line://app/2002197923-oyY6wJ68?auto=yes&type=profile"}}, {type: "spacer", size: "sm"}]}}}]); 
+        sendMessages([{type: "flex", altText: "Profile " + userDisplayName, contents: {type: "bubble", hero: {type: "image", url: userPictureUrl, size: "full", aspectRatio: "1:1", aspectMode: "cover", action: {type: "uri", uri: "line://app/2006895761-IokpKriZ?auto=yes&type=image&downloadUrl=" + userPictureUrl + "&previewUrl=" + userPictureUrl } }, body: {type: "box", layout: "vertical", contents: [{type: "text", text: userDisplayName, align: "center", weight: "bold", size: "xl"}, {type: "box", layout: "vertical", margin: "lg", spacing: "sm", contents: [{type: "text", text: userStatusMessage, wrap: true, color: "#666666", size: "sm", maxLines: 5, flex: 5 }] } ] }, footer: {type: "box", layout: "horizontal", spacing: "sm", contents: [{type: "button", style: "primary", height: "sm", color: "#02afff", action: {type: "uri", label: "Open Chat", uri: "https://line.me/ti/g2/JGUODBE4RE"}}, {type: "button", style: "primary", height: "sm", action: {type: "uri", label: "Profile", uri: "line://app/2006895761-IokpKriZ?auto=yes&type=profile"}}, {type: "spacer", size: "sm"}]}}}]); 
     } else if (type == "text") {
         sendMessages([{
             type: "text",
@@ -444,7 +444,7 @@ function sendMessages(messages) {
 
 function getLiffToken() {
     if (!liff.isLoggedIn()) {
-        document.getElementById("liffToken").value = "You must login first";
+        document.getElementById("liffToken").value = "請先登入";
     } else {
         document.getElementById("liffToken").value = liff.getAccessToken();
     }
