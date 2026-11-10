@@ -10,7 +10,7 @@ LINE LIFF 頁面合集。每個資料夾是一個獨立頁面，共用 `css/haol
 | `liffmoney/` | 自訂紅包發送 | 2006895761-dny6ojY9 |
 | `liffmoneyimg/` | 自訂紅包圖片發送 | 2006895761-J2Em3A4N |
 | `lifftest/` | 預設體驗 | 2006895761-N81pXYnb |
-| `liffv2/` | 原 liff-v2 訊息傳送器（含 assets） | — |
+| `liffv2/` | 原 liff-v2 訊息傳送器（含 assets） | 2006895761-IokpKriZ |
 
 ```
 .
