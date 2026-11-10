@@ -1,53 +1,43 @@
-/* HAO LINE LIFF · liff-v2 訊息發送台 — 深色節慶質感（覆蓋 Bootstrap） */
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Noto+Serif+TC:wght@700;900&display=swap');
+/* HAO LINE LIFF · liff-v2 訊息發送台 — 暖色現代淺色（覆蓋 Bootstrap） */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
 :root{
-  --bg0:#140d0a;--bg1:#1d1410;--panel:rgba(40,29,23,.66);--panel-2:#241913;
-  --hair:rgba(233,193,122,.16);--hair-2:rgba(233,193,122,.32);
-  --ink:#f7ecdd;--ink-2:#d2bfab;--ink-3:#9a8775;
-  --accent:#ecb24c;--accent-2:#f6d184;--accent-deep:#9a6a1e;--accent-ink:#1a1106;--glow:rgba(236,178,76,.5);
-  --font-cjk:'PingFang TC','Microsoft JhengHei','Noto Sans TC',system-ui,sans-serif;
-  --font-serif:'Noto Serif TC',serif;--font-latin:'Fraunces',Georgia,serif;
-  --ease:cubic-bezier(.22,1,.36,1);--spring:cubic-bezier(.34,1.56,.64,1);color-scheme:dark;
+  --bg:#f7f2ea;--surface:#fffdf8;--surface-2:#f1eadf;--ink:#2b2420;--ink-2:#6a5f55;--ink-3:#9d9186;
+  --line:#ebe2d5;--accent:#cf6b43;--accent-deep:#a9502e;--accent-soft:#f8ebe2;--accent-ink:#fff;
+  --shadow-sm:0 1px 2px rgba(74,52,32,.05);--shadow:0 1px 2px rgba(74,52,32,.05),0 14px 30px -18px rgba(74,52,32,.18);
+  --font:'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,'PingFang TC','Microsoft JhengHei','Noto Sans TC',sans-serif;
+  --ease:cubic-bezier(.22,1,.36,1);--spring:cubic-bezier(.34,1.4,.64,1);color-scheme:light;
 }
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-body{margin:0;font-family:var(--font-cjk);background:var(--bg0);color:var(--ink);min-height:100dvh;overflow-x:clip;-webkit-font-smoothing:antialiased}
-.bg{position:fixed;inset:0;z-index:-2;overflow:hidden;pointer-events:none}
-.bg::before{content:"";position:absolute;inset:0;background:radial-gradient(90% 55% at 50% -8%,color-mix(in srgb,var(--accent) 26%,transparent),transparent 60%),linear-gradient(180deg,var(--bg1),var(--bg0) 60%)}
-.bg::after{content:"";position:absolute;inset:0;background:radial-gradient(120% 90% at 50% 40%,transparent 55%,rgba(0,0,0,.45))}
-.grain{position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.5;mix-blend-mode:overlay;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E")}
-.wrap{position:relative;z-index:1;max-width:460px;margin:0 auto;padding:calc(28px + env(safe-area-inset-top)) max(20px,env(safe-area-inset-right)) calc(40px + env(safe-area-inset-bottom)) max(20px,env(safe-area-inset-left))}
-@keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
-.masthead{text-align:center;margin-bottom:22px;animation:rise .6s var(--ease) both}
-.masthead .mark{font-family:var(--font-latin);font-weight:600;font-size:14px;letter-spacing:.18em;color:var(--accent-2);text-transform:uppercase;display:inline-flex;align-items:center;gap:10px}
-.masthead .mark::before,.masthead .mark::after{content:"";width:26px;height:1px;background:linear-gradient(90deg,transparent,var(--hair-2))}
-.masthead .mark::after{background:linear-gradient(90deg,var(--hair-2),transparent)}
-.masthead h1{margin:12px 0 0;font-family:var(--font-serif);font-weight:900;font-size:clamp(24px,7vw,32px);color:var(--ink)}
+body{margin:0;font-family:var(--font);background:var(--bg);color:var(--ink);min-height:100dvh;overflow-x:clip;-webkit-font-smoothing:antialiased}
+.bg{position:fixed;inset:0;z-index:-2;pointer-events:none}
+.bg::before{content:"";position:absolute;inset:0;background:radial-gradient(80% 50% at 50% -6%,var(--accent-soft),transparent 60%),linear-gradient(180deg,#faf5ee,var(--bg) 40%)}
+.grain{display:none}
+.wrap{position:relative;z-index:1;max-width:460px;margin:0 auto;padding:calc(28px + env(safe-area-inset-top)) max(18px,env(safe-area-inset-right)) calc(40px + env(safe-area-inset-bottom)) max(18px,env(safe-area-inset-left))}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.masthead{text-align:center;margin-bottom:20px;animation:rise .55s var(--ease) backwards}
+.masthead .mark{display:inline-flex;align-items:center;gap:9px;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent-deep)}
+.masthead .mark::before,.masthead .mark::after{content:"";width:22px;height:1px;background:#ddd1c0}
+.masthead h1{margin:12px 0 0;font-weight:800;font-size:clamp(23px,7vw,30px);letter-spacing:-.02em;color:var(--ink)}
 .masthead p{margin:8px 0 0;font-size:13px;color:var(--ink-3)}
-/* 表單變成玻璃面板 */
-.form-signin{max-width:none!important;margin:0!important;padding:22px!important;border-radius:20px;background:var(--panel);backdrop-filter:blur(14px) saturate(1.2);-webkit-backdrop-filter:blur(14px) saturate(1.2);border:1px solid var(--hair);box-shadow:0 1px 0 rgba(255,255,255,.05) inset,0 20px 40px -28px rgba(0,0,0,.9);animation:rise .6s var(--ease) .08s both}
-.form-signin .text-center h1,.form-signin .h3{font-family:var(--font-serif)!important;font-weight:700!important;color:var(--ink)!important;font-size:19px!important}
+.form-signin{max-width:none!important;margin:0!important;padding:22px!important;border-radius:20px;background:var(--surface);border:1px solid var(--line);box-shadow:var(--shadow-sm);animation:rise .55s var(--ease) .08s backwards}
+.form-signin .text-center h1,.form-signin .h3{font-weight:700!important;color:var(--ink)!important;font-size:18px!important}
 #greet{color:var(--ink-3)!important;font-size:13px!important}
-.form-label-group{margin-bottom:14px}
-.form-label-group label{color:var(--ink-3);font-size:12px}
-.form-control,.custom-select{height:52px!important;padding:0 16px!important;font-size:16px!important;color:var(--ink)!important;background:rgba(0,0,0,.28)!important;border:1.5px solid var(--hair)!important;border-radius:13px!important;transition:border-color .18s,box-shadow .18s,background-color .18s;appearance:none;-webkit-appearance:none}
-textarea.form-control{height:auto!important;min-height:120px;padding:14px 16px!important;line-height:1.6}
-.form-control::placeholder{color:var(--ink-3);opacity:.7}
-.form-control:focus,.custom-select:focus{outline:none;border-color:var(--accent)!important;background:rgba(0,0,0,.4)!important;box-shadow:0 0 0 4px color-mix(in srgb,var(--accent) 18%,transparent)!important}
-.custom-select{padding-right:44px!important;cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='22' viewBox='0 0 24 24' fill='none' stroke='%23ecb24c' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E")!important;background-repeat:no-repeat!important;background-position:right 14px center!important}
-.custom-select option{background:#241913;color:var(--ink)}
+.form-label-group{margin-bottom:14px;position:relative}
+.form-label-group>label{display:block;margin:7px 2px 0;color:var(--ink-2);font-size:12.5px;text-align:left}
+.form-label-group .custom-control-label{display:inline;margin:0}
+.form-control,.custom-select{display:block;width:100%;height:50px!important;padding:0 15px!important;font-size:16px!important;color:var(--ink)!important;background:var(--surface-2)!important;border:1.5px solid transparent!important;border-radius:13px!important;transition:border-color .16s,box-shadow .16s,background-color .16s;appearance:none;-webkit-appearance:none}
+textarea.form-control{height:auto!important;min-height:120px;padding:13px 15px!important;line-height:1.6}
+.form-control::placeholder{color:var(--ink-3)}
+.form-control:focus,.custom-select:focus{outline:none;border-color:var(--accent)!important;background:var(--surface)!important;box-shadow:0 0 0 4px var(--accent-soft)!important}
+.custom-select{padding-right:44px!important;cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='22' viewBox='0 0 24 24' fill='none' stroke='%239d9186' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E")!important;background-repeat:no-repeat!important;background-position:right 14px center!important}
+.custom-select option{background:var(--surface);color:var(--ink)}
 .custom-checkbox{display:flex;align-items:center;gap:10px;padding:4px 2px}
 .custom-control-label{color:var(--ink-2);font-size:14px}
 .custom-control-input{width:20px;height:20px;accent-color:var(--accent)}
-/* 主要按鈕 */
-.btn{transition:transform .15s var(--spring),filter .18s,background-color .18s,border-color .18s}
-.btn:active{transform:scale(.96)}
-#liffSendMessage,.btn-primary{display:block;width:100%;min-height:56px;line-height:54px!important;margin-top:16px;padding:0 20px!important;font-family:var(--font-serif)!important;font-weight:700!important;font-size:17px!important;letter-spacing:.04em;text-align:center;color:var(--accent-ink)!important;border:0!important;border-radius:15px!important;background:linear-gradient(135deg,var(--accent-2),var(--accent))!important;box-shadow:0 1px 0 rgba(255,255,255,.4) inset,0 12px 30px -10px var(--glow),0 2px 0 var(--accent-deep)!important}
-#liffSendMessage:hover,.btn-primary:hover{filter:brightness(1.05)}
-#liffLogin,#liffLogout,.btn-danger{display:block;width:100%;min-height:50px;line-height:48px!important;margin-top:10px;text-align:center;border-radius:13px!important;font-weight:600!important;font-size:15px!important;color:var(--ink-2)!important;background:rgba(255,255,255,.04)!important;border:1.5px solid var(--hair)!important}
-.form-signin .text-muted{color:var(--ink-3)!important;font-family:var(--font-latin)}
+.btn{transition:transform .15s var(--spring),background-color .16s,border-color .16s,box-shadow .16s}
+.btn:active{transform:scale(.97)}
+#liffSendMessage,.btn-primary{display:block;width:100%;min-height:54px;line-height:52px!important;margin-top:16px;padding:0 20px!important;font-weight:700!important;font-size:16.5px!important;text-align:center;color:var(--accent-ink)!important;border:0!important;border-radius:13px!important;background:var(--accent)!important;box-shadow:var(--shadow),0 8px 18px -10px var(--accent)!important}
+#liffSendMessage:hover,.btn-primary:hover{background:var(--accent-deep)!important}
+#liffLogin,#liffLogout,.btn-danger{display:block;width:100%;min-height:48px;line-height:46px!important;margin-top:10px;text-align:center;border-radius:13px!important;font-weight:600!important;font-size:15px!important;color:var(--ink-2)!important;background:var(--surface-2)!important;border:1.5px solid transparent!important}
+.form-signin .text-muted{color:var(--ink-3)!important}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
-/* 讓 JS 動態插入的輸入框與標籤正常排版（原本靠 floating-labels.css，現已不載入） */
-.form-control,.custom-select{display:block;width:100%}
-.form-label-group{position:relative}
-.form-label-group>label{display:block;margin:7px 2px 0;color:var(--ink-3);font-size:12px;text-align:left}
-.form-label-group .custom-control-label{display:inline;margin:0}
